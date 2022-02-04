@@ -23,8 +23,7 @@ function App() {
       setFilter(cat);
   }
 
-  function onTaskFormSubmit(e,newTask){
-      e.preventDefault();
+  function onTaskFormSubmit(newTask){
       const newTasks = [...allTasks,newTask];
       setAllTasks(newTasks);
   }

@@ -15,8 +15,13 @@ function NewTaskForm({categories, onTaskFormSubmit}) {
     setFormData({...formData, [e.target.name] : e.target.value});
   }
 
+  function submitHandler(e){
+    e.preventDefault();
+    onTaskFormSubmit(formData);
+  }
+
   return (
-    <form className="new-task-form" onSubmit={(e) => onTaskFormSubmit(e,formData)}>
+    <form className="new-task-form" onSubmit={submitHandler}>
       <label>
         Details
         <input type="text" name="text" value={formData.text} onChange={handleOnChange}/>
